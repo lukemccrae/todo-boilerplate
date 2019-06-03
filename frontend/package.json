@@ -1,8 +1,12 @@
 {
   "name": "frontend",
+  "jest": {
+    "transformIgnorePatterns": ["/node_modules/(?!(our-react-components-.*?\\.js$))"]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jest-dom": "^3.4.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
@@ -13,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!ui-core)/\" --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -30,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^8.0.1",
+    "jest": "^24.8.0",
+    "react-test-renderer": "^16.8.6"
   }
 }
