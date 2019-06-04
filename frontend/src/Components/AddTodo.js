@@ -24,9 +24,9 @@ class AddTodo extends Component {
 
 
   saveTodo() {
-    const token = JSON.parse(localStorage.the_main_app).token;
+    const token = JSON.parse(https://simple-todo-d5482.herokuapp.comStorage.the_main_app).token;
 
-    fetch(`http://localhost:3000/todo`, {
+    fetch(`https://simple-todo-d5482.herokuapp.com/host:3000/todo`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
