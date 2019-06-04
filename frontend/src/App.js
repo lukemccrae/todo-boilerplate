@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   getTodos() {
-    fetch(`http://localhost:3000/todo?token=${this.state.token}`, {
+    fetch(`https://simple-todo-d5482.herokuapp.com/todo?token=${this.state.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
