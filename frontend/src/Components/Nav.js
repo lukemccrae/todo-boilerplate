@@ -34,7 +34,7 @@ class Nav extends Component {
             <div>{this.props.username}</div>
             <Button onClick={this.props.addModal}>Add Todo</Button>
             <NavDropdown title="More" id="basic-nav-dropdown">
-              <NavDropdown.Item href="https://github.com/lukemccrae/routine-timer">Github</NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/lukemccrae/todo-boilerplate">Github</NavDropdown.Item>
               <NavDropdown.Divider/>
               <NavDropdown.Item>
                 <Logout loggedOut={this.props.loggedOut} token={this.props.token}></Logout>
