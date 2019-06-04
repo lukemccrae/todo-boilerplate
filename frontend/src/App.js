@@ -28,7 +28,7 @@ class App extends Component {
     const obj = getFromStorage('the_main_app');
     if (obj && obj.token) {
       //verify token
-      fetch('http://localhost:3000/api/account/verify?token=' + obj.token).then(res => res.json()).then(json => {
+      fetch('https://simple-todo-d5482.herokuapp.com/api/account/verify?token=' + obj.token).then(res => res.json()).then(json => {
         if (json.success) {
           this.setState({token: obj.token, isLoading: false})
         } else {

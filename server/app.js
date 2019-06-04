@@ -16,6 +16,8 @@ var users = require('./routes/users');
 
 const MONGODB_URI = process.env.MONGOLAB_URI || process.env.LOCAL_HOST;
 
+console.log(MONGODB_URI);
+
 const options = {
     autoIndex: false, // Don't build indexes
     reconnectTries: 30, // Retry up to 30 times
