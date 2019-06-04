@@ -1,8 +1,5 @@
 {
   "name": "frontend",
-  "jest": {
-    "transformIgnorePatterns": ["/node_modules/(?!(our-react-components-.*?\\.js$))"]
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,7 +34,6 @@
   },
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
-    "jest": "^24.8.0",
     "react-test-renderer": "^16.8.6"
   }
 }
