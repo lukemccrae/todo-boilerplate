@@ -52,7 +52,7 @@ class Dash extends Component {
   deleteTodo(todo) {
   const token = JSON.parse(localStorage.the_main_app).token;
 
-  fetch(`http://localhost:3000/todo?token=${token}&todoId=${todo._id}`, {
+  fetch(`https://simple-todo-d5482.herokuapp.com/todo?token=${token}&todoId=${todo._id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
