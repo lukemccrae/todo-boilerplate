@@ -247,10 +247,6 @@ router.get('/api/account/verify', (req, res, next) => {
   })
 })
 
-
-
-
-
 router.get('/todo', (req, res, next) => {
   const {
     query
@@ -262,15 +258,22 @@ router.get('/todo', (req, res, next) => {
     _id: token,
     isDeleted: false
   }, (err, sessions) => {
-    Todo.find({
-      user: sessions[0].userId
-    }, (err, todos) => {
-      res.send({
-        success: true,
-        message: 'todos found',
-        todos: todos
+    if(sessions.length > 0) {
+      Todo.find({
+        user: sessions[0].userId
+      }, (err, todos) => {
+        res.send({
+          success: true,
+          message: 'todos found',
+          todos: todos
+        })
       })
-    })
+    } else {
+      res.send({
+        success: false,
+        message: 'No user found'
+      })
+    }
   })
 })
 
@@ -361,7 +364,6 @@ router.delete('/todo', function(req, res) {
     }
   })
 })
-
 
 
 module.exports = router;

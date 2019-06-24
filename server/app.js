@@ -16,7 +16,6 @@ var users = require('./routes/users');
 
 const MONGODB_URI = process.env.MONGOLAB_URI || process.env.LOCAL_HOST;
 
-console.log(MONGODB_URI);
 
 const options = {
     autoIndex: false, // Don't build indexes
@@ -29,11 +28,11 @@ const options = {
   }
 
 const connectWithRetry = () => {
-  console.log('MongoDB connection with retry')
+  // console.log('MongoDB connection with retry')
   mongoose.connect(MONGODB_URI, {useNewUrlParser: true}).then(()=>{
-    console.log('MongoDB is connected')
+    // console.log('MongoDB is connected')
   }).catch(err=>{
-    console.log('MongoDB connection unsuccessful, retry after 5 seconds.')
+    // console.log('MongoDB connection unsuccessful, retry after 5 seconds.')
     setTimeout(connectWithRetry, 5000)
   })
 }
